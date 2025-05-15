@@ -3,6 +3,13 @@ import pandas as pd
 import numpy as np
 import pickle
 from datetime import datetime
+import os
+import rarfile
+
+# Model dosyası yoksa rar'dan çıkar
+if not os.path.exists('model.pkl'):
+    with rarfile.RarFile('model.rar') as rf:
+        rf.extractall()
 
 # Model ve kolonları yükle
 with open('model.pkl', 'rb') as f:
