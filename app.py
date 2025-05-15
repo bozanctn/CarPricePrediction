@@ -4,11 +4,11 @@ import numpy as np
 import pickle
 from datetime import datetime
 import os
-import rarfile
+import zipfile
 
 # Model dosyası yoksa rar'dan çıkar
 if not os.path.exists('model.pkl'):
-    with rarfile.RarFile('model.rar') as rf:
+    with zipfile.ZipFile('model.zip') as rf:
         rf.extractall()
 
 # Model ve kolonları yükle
