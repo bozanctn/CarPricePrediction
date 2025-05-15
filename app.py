@@ -8,7 +8,7 @@ import zipfile
 
 # Model dosyası yoksa rar'dan çıkar
 if not os.path.exists('model.pkl'):
-    with zipfile.ZipFile('model.zip') as rf:
+    with zipfile.ZipFile('Models.zip') as rf:
         rf.extractall()
 
 # Model ve kolonları yükle
